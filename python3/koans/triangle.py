@@ -17,7 +17,10 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
-    # DELETE 'PASS' AND WRITE THIS CODE
+    if not (a > 0) or not (b > 0) or not (c > 0):
+        raise TriangleError('sides must be positive')
+    if (a > b + c) or (b > a + c) or (c > a + b):
+        raise TriangleError('one side is too long')
     if a == b == c:
         return 'equilateral'
     elif a == b or a == c or b == c:
