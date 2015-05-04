@@ -130,7 +130,7 @@ class AboutIteration(Koan):
                     return line.strip().upper()
                 upcase_lines = map(make_upcase, file.readlines())
                 self.assertEqual(['THIS', 'IS', 'A', 'TEST'], list(upcase_lines))
-                file.close()
+            self.assertTrue(file.closed)
         except IOError:
             # should never happen
             self.fail()
